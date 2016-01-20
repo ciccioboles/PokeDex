@@ -12,6 +12,7 @@
 		FCA48FE61C4EFF9B002DA996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA48FE41C4EFF9B002DA996 /* Main.storyboard */; };
 		FCA48FE81C4EFF9B002DA996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA48FE71C4EFF9B002DA996 /* Assets.xcassets */; };
 		FCA48FEB1C4EFF9B002DA996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA48FE91C4EFF9B002DA996 /* LaunchScreen.storyboard */; };
+		FCA48FF31C4F0530002DA996 /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = FCA48FF21C4F0530002DA996 /* pokemon.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FCA48FE71C4EFF9B002DA996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA48FEA1C4EFF9B002DA996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCA48FEC1C4EFF9B002DA996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA48FF21C4F0530002DA996 /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FCA48FE01C4EFF9B002DA996 /* AppDelegate.swift */,
 				FCA48FE21C4EFF9B002DA996 /* ViewController.swift */,
+				FCA48FF21C4F0530002DA996 /* pokemon.csv */,
 				FCA48FE41C4EFF9B002DA996 /* Main.storyboard */,
 				FCA48FE71C4EFF9B002DA996 /* Assets.xcassets */,
 				FCA48FE91C4EFF9B002DA996 /* LaunchScreen.storyboard */,
@@ -124,6 +127,7 @@
 			files = (
 				FCA48FEB1C4EFF9B002DA996 /* LaunchScreen.storyboard in Resources */,
 				FCA48FE81C4EFF9B002DA996 /* Assets.xcassets in Resources */,
+				FCA48FF31C4F0530002DA996 /* pokemon.csv in Resources */,
 				FCA48FE61C4EFF9B002DA996 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
