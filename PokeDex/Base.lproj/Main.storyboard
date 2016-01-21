@@ -141,15 +141,86 @@
                     <connections>
                         <outlet property="collection" destination="yyA-gv-7In" id="Gh8-Cd-c9z"/>
                         <outlet property="searchBar" destination="Lf4-Ij-N2q" id="aQj-Jl-5KW"/>
+                        <segue destination="aLL-DT-wOF" kind="show" identifier="PokemonDetailVC" id="aki-qZ-d0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="242" y="324"/>
         </scene>
+        <!--Pokemon DetailVC-->
+        <scene sceneID="lbN-i5-GWi">
+            <objects>
+                <viewController id="aLL-DT-wOF" customClass="PokemonDetailVC" customModule="PokeDex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rN1-5A-NF7"/>
+                        <viewControllerLayoutGuide type="bottom" id="H3g-mc-OuD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Llu-Ef-pkA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLw-Mi-nWW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cicciocioo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1u-Kq-Nv7">
+                                        <rect key="frame" x="208" y="13" width="185" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Bv3-t3-wEI"/>
+                                            <constraint firstAttribute="height" constant="119" id="EDa-w8-Woy"/>
+                                            <constraint firstAttribute="width" constant="276" id="fWF-Vv-nXQ"/>
+                                            <constraint firstAttribute="width" constant="185" id="fek-lR-egt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" red="0.99396306820000002" green="0.99396306820000002" blue="0.99396306820000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="EDa-w8-Woy"/>
+                                                <exclude reference="fWF-Vv-nXQ"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfQ-0D-AK8">
+                                        <rect key="frame" x="13" y="17" width="37" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="37" id="1h2-g4-y2w"/>
+                                            <constraint firstAttribute="height" constant="24" id="acf-yK-32D"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.35522404839999999" blue="0.3938550857" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="2C6-Du-AX2"/>
+                                    <constraint firstItem="x1u-Kq-Nv7" firstAttribute="centerX" secondItem="wLw-Mi-nWW" secondAttribute="centerX" id="JiA-xz-aUY"/>
+                                    <constraint firstItem="x1u-Kq-Nv7" firstAttribute="centerY" secondItem="wLw-Mi-nWW" secondAttribute="centerY" id="PCk-DF-smb"/>
+                                    <constraint firstItem="PfQ-0D-AK8" firstAttribute="leading" secondItem="wLw-Mi-nWW" secondAttribute="leading" constant="13" id="ZbN-Pw-17z"/>
+                                    <constraint firstAttribute="bottom" secondItem="PfQ-0D-AK8" secondAttribute="bottom" constant="16" id="yHS-wD-h0c"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sb6-Kl-iXL">
+                                <rect key="frame" x="20" y="65" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Bio"/>
+                                    <segment title="Moves"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.3150999793" blue="0.2640102366" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="nameLbl" destination="x1u-Kq-Nv7" id="upM-5F-w6s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-L9-S1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="324"/>
+        </scene>
     </scenes>
     <resources>
         <image name="297" width="120" height="120"/>
+        <image name="back" width="100" height="67"/>
         <image name="bg 2" width="1920" height="1200"/>
         <image name="music" width="100" height="100"/>
     </resources>

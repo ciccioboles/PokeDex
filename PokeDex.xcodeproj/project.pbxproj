@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC6391611C5086C000209F3B /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6391601C5086C000209F3B /* PokemonDetailVC.swift */; };
 		FC8518461C50110300EC56DF /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC8518451C50110300EC56DF /* pokemon.ttf */; };
 		FCA48FE11C4EFF9B002DA996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA48FE01C4EFF9B002DA996 /* AppDelegate.swift */; };
 		FCA48FE31C4EFF9B002DA996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA48FE21C4EFF9B002DA996 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC6391601C5086C000209F3B /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		FC8518451C50110300EC56DF /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 		FCA48FDD1C4EFF9B002DA996 /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA48FE01C4EFF9B002DA996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA48FE21C4EFF9B002DA996 /* ViewController.swift */,
+				FC6391601C5086C000209F3B /* PokemonDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				FCA48FFB1C4F18FD002DA996 /* PokeCell.swift in Sources */,
 				FCA48FE31C4EFF9B002DA996 /* ViewController.swift in Sources */,
 				FCA48FE11C4EFF9B002DA996 /* AppDelegate.swift in Sources */,
+				FC6391611C5086C000209F3B /* PokemonDetailVC.swift in Sources */,
 				FCA48FF61C4F096A002DA996 /* Pokemon.swift in Sources */,
 				FCA48FFD1C4F262F002DA996 /* csv.swift in Sources */,
 			);
