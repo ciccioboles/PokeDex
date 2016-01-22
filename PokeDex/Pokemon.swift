@@ -59,18 +59,56 @@ class Pokemon {
                     self._height = height
                 }
                 
-                if let attack = dict["attack"] as? String {
-                    self._attack = attack
+                if let attack = dict["attack"] as? Int {
+                    self._attack = "\(attack)"
                 }
                 
-                if let defense = dict["defense"] as? String {
-                    self._defense = defense
+                if let defense = dict["defense"] as? Int {
+                    self._defense = "\(defense)"
                 }
                 
                 print(self._defense)
                 print(self._weight)
                 print(self._attack)
                 print(self._height)
+                
+                if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
+                    if let name = types[0] ["name"] {
+                        self._type = name.capitalizedString
+                        
+                    }
+                    
+                    if types.count > 1 {
+                        for var x = 1; x < types.count; x++ {
+                            if let name = types[x] ["name"] {
+                                self._type! += "/\(name.capitalizedString)"
+                            }
+                        }
+                    }
+                }else {
+                    self._type = ""
+                }
+                print(self._type)
+                
+                if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
+                    
+                    if let url = descArr[0]["resource.uri"] {
+                        let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
+                        
+                        Alamofire.request(.GET, nsurl).responseJSON { response in
+                            let desResult = response.result
+                            if let descDict = desResult.value as? Dictionary<String, AnyObject> {
+                                if let description = descDict["description"] as? String {
+                                    self._description = description
+                                    print(self._description)
+                                }
+                            }
+                        }
+                        
+                    }
+                }else {
+                    self._description = ""
+                }
             }
             
         }
