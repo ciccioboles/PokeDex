@@ -23,10 +23,8 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var weightLbl: UILabel!
     @IBOutlet weak var baseAttack: UILabel!
     
-        
     var pokemon: Pokemon!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,10 +32,7 @@ class PokemonDetailVC: UIViewController {
         let img = UIImage(named: "\(pokemon.pokedexId)")
         mainImg.image = img
         currentEvoImg.image = img
-        
-       
-        
-        
+      
         pokemon.downloadPokemonDetails { () -> () in
            self.updateUI()
         }

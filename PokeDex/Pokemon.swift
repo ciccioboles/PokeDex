@@ -99,7 +99,6 @@ class Pokemon {
         self._name = name
         self._pokedexId = pokedexId
         
-        
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self._pokedexId)/"
     }
 
@@ -136,7 +135,6 @@ class Pokemon {
                 if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
                     if let name = types[0] ["name"] {
                         self._type = name.capitalizedString
-                        
                     }
                     
                     if types.count > 1 {
