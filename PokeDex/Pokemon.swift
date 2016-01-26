@@ -23,24 +23,28 @@ class Pokemon {
     private var _nextEvolutionLvl: String!
     private var _pokemonUrl: String!
     
-    var nextEvolutionTxt: String {
-            if _nextEvolutionTxt == nil {
-                _nextEvolutionTxt = ""
-        }
-        return _nextEvolutionTxt
-    }
-     var nextEvolutionId: String {
-        if _nextEvolutionId == nil {
-            _nextEvolutionId = ""
-        }
-        return _nextEvolutionId
-    }
     var nextEvolutionLvl: String {
         if _nextEvolutionLvl == nil {
             _nextEvolutionLvl = ""
         }
         return _nextEvolutionLvl
     }
+    var nextEvolutionTxt: String {
+        get {
+            if _nextEvolutionTxt == nil {
+                _nextEvolutionTxt = ""
+            }
+            return _nextEvolutionTxt
+        }
+    }
+    
+    var nextEvolutionId: String {
+        if _nextEvolutionId == nil {
+            _nextEvolutionId = ""
+        }
+        return _nextEvolutionId
+    }
+
     
     var description: String {
         if _description == nil {
@@ -84,8 +88,6 @@ class Pokemon {
         return _attack
     }
     
-    
-    //pokeapi.co/api/v1/pokemon/1/
     
     var name: String {
         return _name
@@ -139,7 +141,7 @@ class Pokemon {
                     
                     if types.count > 1 {
                         for var x = 1; x < types.count; x++ {
-                            if let name = types[x] ["name"] {
+                            if let name = types[x]["name"] {
                                 self._type! += "/\(name.capitalizedString)"
                             }
                         }
@@ -164,14 +166,13 @@ class Pokemon {
                             }
                             completed()
                         }
-                        
                     }
-                }else {
+                } else {
                     self._description = ""
                 }
                 
-                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>]
-                    where evolutions.count > 0 {
+                if let evolutions = dict["evolutions"] as? [Dictionary<String,AnyObject>]
+                    where evolutions.count > 0{
                         
                         if let to = evolutions[0] ["to"] as? String {
                             

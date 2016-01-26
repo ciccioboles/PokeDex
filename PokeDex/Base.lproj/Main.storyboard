@@ -272,16 +272,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-38-lVS">
-                                                <rect key="frame" x="143" y="0.0" width="100" height="40"/>
+                                                <rect key="frame" x="160" y="0.0" width="48" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="rVV-6c-ysV"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="rVV-6c-ysV"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-D9-MHy">
-                                                <rect key="frame" x="294" y="0.0" width="154" height="40"/>
+                                                <rect key="frame" x="276" y="0.0" width="154" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="154" id="6uZ-2s-w7o"/>
                                                 </constraints>
@@ -407,13 +412,7 @@
                                     <constraint firstItem="IDd-qM-fdn" firstAttribute="centerX" secondItem="dfS-pJ-NrU" secondAttribute="centerX" id="HJV-AK-qvQ"/>
                                     <constraint firstItem="IDd-qM-fdn" firstAttribute="top" secondItem="dfS-pJ-NrU" secondAttribute="top" constant="2" id="SPp-RL-zM9"/>
                                     <constraint firstItem="IDd-qM-fdn" firstAttribute="centerY" secondItem="dfS-pJ-NrU" secondAttribute="centerY" id="bFP-b7-WU2"/>
-                                    <constraint firstAttribute="height" constant="26" id="vvR-V7-TWt"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="vvR-V7-TWt"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dNa-uk-BJe">
                                 <rect key="frame" x="20" y="398" width="400" height="200"/>

@@ -34,9 +34,9 @@ class PokemonDetailVC: UIViewController {
         currentEvoImg.image = img
       
         pokemon.downloadPokemonDetails { () -> () in
+            print("work?work?work?work?work?work?work?work?work?work?work?work?work?work?work?")
            self.updateUI()
         }
-        
     }
     
     func updateUI() {
@@ -60,9 +60,7 @@ class PokemonDetailVC: UIViewController {
                 str += " - LVL \(pokemon.nextEvolutionLvl)"
             }
             
-        }
-        
-        
+        }        
         
     }
     
