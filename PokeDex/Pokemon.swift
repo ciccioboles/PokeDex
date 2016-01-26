@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-
 class Pokemon {
     private var _name: String!
     private var _pokedexId: Int!
@@ -102,7 +101,6 @@ class Pokemon {
         
         
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self._pokedexId)/"
-        
     }
 
     func downloadPokemonDetails(completed: DownloadComplete) {
@@ -112,7 +110,6 @@ class Pokemon {
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
-            //print(result.value.debugDescription)
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 if let weight = dict["weight"] as? String {
