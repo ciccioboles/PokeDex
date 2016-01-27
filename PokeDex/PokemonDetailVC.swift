@@ -9,7 +9,7 @@
 import UIKit
 
 class PokemonDetailVC: UIViewController {
-
+    
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
@@ -24,18 +24,17 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var baseAttack: UILabel!
     
     var pokemon: Pokemon!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         nameLbl.text = pokemon.name
         let img = UIImage(named: "\(pokemon.pokedexId)")
         mainImg.image = img
         currentEvoImg.image = img
-      
+        
         pokemon.downloadPokemonDetails { () -> () in
-            print("work?work?work?work?work?work?work?work?work?work?work?work?work?work?work?")
-           self.updateUI()
+            self.updateUI()
         }
     }
     
@@ -51,7 +50,7 @@ class PokemonDetailVC: UIViewController {
         if pokemon.nextEvolutionId == "" {
             evoLbl.text = "No Evolutions"
             nextEvoImg.hidden = true
-        }else {
+        } else {
             nextEvoImg.hidden = false
             nextEvoImg.image = UIImage(named: pokemon.nextEvolutionId)
             var str = "Next Evolution: \(pokemon.nextEvolutionTxt)"
@@ -59,17 +58,17 @@ class PokemonDetailVC: UIViewController {
             if pokemon.nextEvolutionLvl != "" {
                 str += " - LVL \(pokemon.nextEvolutionLvl)"
             }
-            
-        }        
-        
+        }
     }
     
     override func didReceiveMemoryWarning() {
-        
     }
-
+    
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-   
+    
+    
 }
+
+

@@ -6,6 +6,8 @@
 //  Copyright © 2016 ciccio boles. All rights reserved.
 //
 
+
+
 import Foundation
 import Alamofire
 
@@ -24,29 +26,32 @@ class Pokemon {
     private var _pokemonUrl: String!
     
     var nextEvolutionLvl: String {
-        if _nextEvolutionLvl == nil {
-            _nextEvolutionLvl = ""
-        }
-        return _nextEvolutionLvl
-    }
-    var nextEvolutionTxt: String {
         get {
-            if _nextEvolutionTxt == nil {
-                _nextEvolutionTxt = ""
+            if _nextEvolutionLvl == nil {
+                _nextEvolutionLvl = ""
             }
-            return _nextEvolutionTxt
+            return _nextEvolutionLvl
         }
     }
     
+    var nextEvolutionTxt: String {
+        if _nextEvolutionTxt == nil {
+            _nextEvolutionTxt = ""
+        }
+        
+        return _nextEvolutionTxt
+    }
+    
     var nextEvolutionId: String {
+        
         if _nextEvolutionId == nil {
             _nextEvolutionId = ""
         }
         return _nextEvolutionId
     }
-
     
     var description: String {
+        
         if _description == nil {
             _description = ""
         }
@@ -88,7 +93,6 @@ class Pokemon {
         return _attack
     }
     
-    
     var name: String {
         return _name
     }
@@ -96,14 +100,14 @@ class Pokemon {
     var pokedexId: Int {
         return _pokedexId
     }
-
+    
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
         
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self._pokedexId)/"
     }
-
+    
     func downloadPokemonDetails(completed: DownloadComplete) {
         
         let url = NSURL(string: _pokemonUrl)!
@@ -129,13 +133,13 @@ class Pokemon {
                     self._defense = "\(defense)"
                 }
                 
-                print(self._defense)
                 print(self._weight)
-                print(self._attack)
                 print(self._height)
+                print(self._attack)
+                print(self._defense)
                 
                 if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
-                    if let name = types[0] ["name"] {
+                    if let name = types[0]["name"] {
                         self._type = name.capitalizedString
                     }
                     
@@ -146,14 +150,15 @@ class Pokemon {
                             }
                         }
                     }
-                }else {
+                } else {
                     self._type = ""
                 }
+                
                 print(self._type)
                 
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     
-                    if let url = descArr[0]["resource.uri"] {
+                    if let url = descArr[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
                         
                         Alamofire.request(.GET, nsurl).responseJSON { response in
@@ -174,14 +179,15 @@ class Pokemon {
                 if let evolutions = dict["evolutions"] as? [Dictionary<String,AnyObject>]
                     where evolutions.count > 0{
                         
-                        if let to = evolutions[0] ["to"] as? String {
-                            
+                        if let to = evolutions[0]["to"] as? String {
                             if to.rangeOfString("mega") == nil {
                                 
-                                if let uri = evolutions[0] ["resource_uri"] as? String  {
+                                if let uri = evolutions[0]["resource_uri"] as? String {
+                                    
                                     let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
                                     
                                     let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
+                                    
                                     self._nextEvolutionId = num
                                     self._nextEvolutionTxt = to
                                     
@@ -189,34 +195,21 @@ class Pokemon {
                                         self._nextEvolutionLvl = "\(lvl)"
                                     }
                                     
-                                    print(self._nextEvolutionLvl)
                                     print(self._nextEvolutionId)
                                     print(self._nextEvolutionTxt)
+                                    print(self._nextEvolutionLvl)
                                     
                                 }
                             }
+                            
                         }
+                        
                 }
             }
             
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}//
+}
+
+

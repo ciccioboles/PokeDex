@@ -56,41 +56,44 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 pokemon.append(poke)
             }
             
-        }catch let err as NSError {
+        } catch let err as NSError {
             print(err.debugDescription)
         }
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
+            
             let poke: Pokemon!
             
             if inSearchMode {
                 poke = filteredPokemon[indexPath.row]
-            }else {
+            } else {
                 poke = pokemon[indexPath.row]
             }
             
             
             
             cell.configureCell(poke)
-            
             return cell
-        }else {
+            
+        } else {
             return UICollectionViewCell()
         }
+        
     }
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let poke: Pokemon!
+        
         if inSearchMode {
             poke = filteredPokemon[indexPath.row]
-        }else {
+        } else {
             poke = pokemon[indexPath.row]
         }
         
         print(poke.name)
         performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+        
     }
     
     
@@ -102,7 +105,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return pokemon.count
     }
-    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -116,7 +118,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if musicPlayer.playing {
             musicPlayer.stop()
             sender.alpha = 0.2
-        }else {
+        } else {
             musicPlayer.play()
             sender.alpha = 1.0
         }
@@ -131,12 +133,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             inSearchMode = false
             view.endEditing(true)
             collection.reloadData()
-        }else {
+        } else {
             inSearchMode = true
             let lower = searchBar.text!.lowercaseString
             filteredPokemon = pokemon.filter({$0.name.rangeOfString(lower) != nil})
             collection.reloadData()
-            
         }
     }
     
@@ -144,17 +145,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if segue.identifier == "PokemonDetailVC" {
             if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
                 if let poke = sender as? Pokemon {
-                    detailsVC.pokemon = poke 
+                    detailsVC.pokemon = poke
                 }
             }
         }
     }
-    
-    
-    
-    
-    
-    
+}
 
-}//
+
 

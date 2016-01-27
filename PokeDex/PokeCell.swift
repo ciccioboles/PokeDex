@@ -6,6 +6,7 @@
 //  Copyright © 2016 ciccio boles. All rights reserved.
 //
 
+
 import UIKit
 
 class PokeCell: UICollectionViewCell {
@@ -26,7 +27,8 @@ class PokeCell: UICollectionViewCell {
         
         nameLbl.text = self.pokemon.name.capitalizedString
         thumbImg.image = UIImage(named: "\(self.pokemon.pokedexId)")
+        
     }
-    
-    
 }
+
+
